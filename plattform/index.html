@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting started | Plattform Neun - Documentation</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.d4613532.css" as="style"><link rel="preload" href="/assets/js/app.cac3eb37.js" as="script"><link rel="preload" href="/assets/js/2.44c2a658.js" as="script"><link rel="preload" href="/assets/js/6.4dbc7ba9.js" as="script"><link rel="prefetch" href="/assets/js/3.c1fd6fe4.js"><link rel="prefetch" href="/assets/js/4.bff5f237.js"><link rel="prefetch" href="/assets/js/5.e3532895.js"><link rel="prefetch" href="/assets/js/7.b5276baa.js"><link rel="prefetch" href="/assets/js/8.aac5efdd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d4613532.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Plattform Neun - Documentation</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Getting started</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/plattform/#authentication" class="sidebar-link">Authentication</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/plattform/#customers" class="sidebar-link">Customers</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/plattform/#get-a-list-of-all-customers" class="sidebar-link">Get a list of all customers</a></li><li class="sidebar-sub-header"><a href="/plattform/#retrieve-a-customer" class="sidebar-link">Retrieve a customer</a></li><li class="sidebar-sub-header"><a href="/plattform/#update-a-customer" class="sidebar-link">Update a customer</a></li></ul></li><li><a href="/plattform/#producers" class="sidebar-link">Producers</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/plattform/#get-a-list-of-all-producers" class="sidebar-link">Get a list of all producers</a></li><li class="sidebar-sub-header"><a href="/plattform/#retrieve-a-producer" class="sidebar-link">Retrieve a producer</a></li><li class="sidebar-sub-header"><a href="/plattform/#update-a-producer" class="sidebar-link">Update a producer</a></li></ul></li><li><a href="/plattform/#products" class="sidebar-link">Products</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/plattform/#get-a-collection-of-products" class="sidebar-link">Get a collection of products</a></li><li class="sidebar-sub-header"><a href="/plattform/#retrieve-a-product" class="sidebar-link">Retrieve a product</a></li><li class="sidebar-sub-header"><a href="/plattform/#create-a-product" class="sidebar-link">Create a product</a></li><li class="sidebar-sub-header"><a href="/plattform/#update-an-individual-product" class="sidebar-link">Update an individual product</a></li></ul></li><li><a href="/plattform/#orders" class="sidebar-link">Orders</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/plattform/#get-a-collection-of-orders" class="sidebar-link">Get a collection of orders</a></li><li class="sidebar-sub-header"><a href="/plattform/#retrieve-an-individual-order" class="sidebar-link">Retrieve an individual order</a></li></ul></li><li><a href="/plattform/#deliveries" class="sidebar-link">Deliveries</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/plattform/#get-a-collection-of-deliveries" class="sidebar-link">Get a collection of deliveries</a></li><li class="sidebar-sub-header"><a href="/plattform/#retrieve-an-individual-delivery" class="sidebar-link">Retrieve an individual delivery</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="getting-started"><a href="#getting-started" aria-hidden="true" class="header-anchor">#</a> Getting started</h1> <p>Our JSON API is organized around REST with predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.</p> <p><a href="api-reference">API-Reference</a></p> <h4 id="base-url"><a href="#base-url" aria-hidden="true" class="header-anchor">#</a> Base URL</h4> <div class="language- extra-class"><pre class="language-text"><code> /api/v1
+</code></pre></div><h2 id="authentication"><a href="#authentication" aria-hidden="true" class="header-anchor">#</a> Authentication</h2> <p>We use Access Tokens to authenticate requests. You can view and manage your Personal Access Tokens in your Dashboard.
+Your Personal Access Token carry many privileges, so be sure to keep them secure! Do not share your secret Tokens in publicly accessible areas such as GitHub, client-side code, and so forth.
+All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.</p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/me <span class="token punctuation">\</span>
+  -H <span class="token string">&quot;Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN&quot;</span>
+</code></pre></div><h2 id="customers"><a href="#customers" aria-hidden="true" class="header-anchor">#</a> Customers</h2> <p>The API allows you to delete, and update your customers. You can retrieve individual customers as well as a list of all your customers.</p> <h3 id="get-a-list-of-all-customers"><a href="#get-a-list-of-all-customers" aria-hidden="true" class="header-anchor">#</a> Get a list of all customers</h3> <p><strong>REQUEST</strong> <code>GET</code> / customers</p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/customers
+</code></pre></div><p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;first&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;last&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Doe&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;johndoe@example.com&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;verified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-06-24 10:42:02&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;company&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gretas Hof&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;legal_form&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GmbH&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;street&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Am alten Pfad&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;house&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;post_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10997&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Berlin-Kreuzberg&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deutschland&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;vat_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DE123456789&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;user_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;customer&quot;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="retrieve-a-customer"><a href="#retrieve-a-customer" aria-hidden="true" class="header-anchor">#</a> Retrieve a customer</h3> <p><strong>REQUEST</strong> <strong><code>GET</code></strong> <code>/customers/{id}</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/customers/12345
+</code></pre></div><p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;first&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;last&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Doe&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;johndoe@example.com&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;verified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-06-24 10:42:02&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;company&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gretas Hof&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;legal_form&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GmbH&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;street&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Am alten Pfad&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;house&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;post_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10997&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Berlin-Kreuzberg&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deutschland&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vat_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DE123456789&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;user_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;customer&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="update-a-customer"><a href="#update-a-customer" aria-hidden="true" class="header-anchor">#</a> Update a customer</h3> <p><strong>REQUEST</strong> <strong><code>PATCH</code></strong> <code>/customers/{id}</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/customers/12345 <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">street</span><span class="token operator">=</span><span class="token string">&quot;Neue Straße&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">house</span><span class="token operator">=</span><span class="token string">&quot;112-114&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">post_code</span><span class="token operator">=</span><span class="token number">10997</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">city</span><span class="token operator">=</span><span class="token string">&quot;Berlin&quot;</span>
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">Available body parameters</p> <ul><li>company_name <code>String(255)</code></li> <li>legal_form <code>String(255)</code></li> <li>street <code>String(255)</code></li> <li>house <code>String(16)</code></li> <li>post_code <code>Integer(8)</code></li> <li>city <code>String(255)</code></li> <li>country <code>String(255)</code></li> <li>vat_id <code>String(11)</code></li></ul></div> <p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;first&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;last&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Doe&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;johndoe@example.com&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;verified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-06-24 10:42:02&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;company&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gretas Hof&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;legal_form&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GmbH&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;street&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Neue Straße&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;house&quot;</span><span class="token operator">:</span> <span class="token string">&quot;112-114&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;post_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10997&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Berlin&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deutschland&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vat_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DE123456789&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;user_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;customer&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="producers"><a href="#producers" aria-hidden="true" class="header-anchor">#</a> Producers</h2> <p>The API allows you to delete, and update your producers. You can retrieve individual producers as well as a list of all your producers.</p> <h3 id="get-a-list-of-all-producers"><a href="#get-a-list-of-all-producers" aria-hidden="true" class="header-anchor">#</a> Get a list of all producers</h3> <p><strong>REQUEST</strong> <code>GET</code> / producers</p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/producers
+</code></pre></div><p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;first&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;last&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Doe&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;johndoe@example.com&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;verified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-06-24 10:42:02&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;company&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gretas Hof&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;legal_form&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GmbH&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;street&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Am alten Pfad&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;house&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;post_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10997&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Berlin-Kreuzberg&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deutschland&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;vat_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DE123456789&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;user_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;producer&quot;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="retrieve-a-producer"><a href="#retrieve-a-producer" aria-hidden="true" class="header-anchor">#</a> Retrieve a producer</h3> <p><strong>REQUEST</strong> <strong><code>GET</code></strong> <code>/producers/{id}</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/producers/12345
+</code></pre></div><p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;first&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;last&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Doe&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;johndoe@example.com&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;verified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-06-24 10:42:02&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;company&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gretas Hof&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;legal_form&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GmbH&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;street&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Am alten Pfad&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;house&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;post_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10997&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Berlin-Kreuzberg&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deutschland&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vat_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DE123456789&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;user_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;producer&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="update-a-producer"><a href="#update-a-producer" aria-hidden="true" class="header-anchor">#</a> Update a producer</h3> <p><strong>REQUEST</strong> <strong><code>PATCH</code></strong> <code>/producers/{id}</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/producers/12345 <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">street</span><span class="token operator">=</span><span class="token string">&quot;Neue Straße&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">house</span><span class="token operator">=</span><span class="token string">&quot;112-114&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">post_code</span><span class="token operator">=</span><span class="token number">10997</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">city</span><span class="token operator">=</span><span class="token string">&quot;Berlin&quot;</span>
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">Available body parameters</p> <ul><li>username <code>slug, unique</code></li> <li>company_name <code>String(255)</code></li> <li>legal_form <code>String(255)</code></li> <li>street <code>String(255)</code></li> <li>house <code>String(16)</code></li> <li>post_code <code>Integer(8)</code></li> <li>city <code>String(255)</code></li> <li>country <code>String(255)</code></li> <li>vat_id <code>String(11)</code></li></ul></div> <p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;first&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;last&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Doe&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;johndoe@example.com&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;verified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-06-24 10:42:02&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-04 12:45:09&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;company&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gretas Hof&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;legal_form&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GmbH&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;street&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Neue Straße&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;house&quot;</span><span class="token operator">:</span> <span class="token string">&quot;112-114&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;post_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10997&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Berlin&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deutschland&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vat_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DE123456789&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;user_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;producer&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="products"><a href="#products" aria-hidden="true" class="header-anchor">#</a> Products</h2> <p>The API allows you to delete, and update products. You can retrieve individual products as well as a collection of products.</p> <h3 id="get-a-collection-of-products"><a href="#get-a-collection-of-products" aria-hidden="true" class="header-anchor">#</a> Get a collection of products</h3> <p><strong>REQUEST</strong> <code>GET</code> / products</p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/products?producer_id<span class="token operator">=</span><span class="token number">12345</span>
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">Available query parameters</p> <ul><li>producer_id <code>Integer</code></li> <li>username <code>String, Slug</code></li></ul></div> <p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">84683</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;producer_id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;visibillity&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Potatoes&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;volume&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;lead_time&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="retrieve-a-product"><a href="#retrieve-a-product" aria-hidden="true" class="header-anchor">#</a> Retrieve a product</h3> <p><strong>REQUEST</strong> <strong><code>GET</code></strong> <code>/products/{id}</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/products/84683
+</code></pre></div><p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">84683</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;producer_id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;visibillity&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Potatoes&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;volume&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;lead_time&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="create-a-product"><a href="#create-a-product" aria-hidden="true" class="header-anchor">#</a> Create a product</h3> <p><strong>REQUEST</strong> <strong><code>POST</code></strong> <code>/products</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/products <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">visibillity</span><span class="token operator">=</span><span class="token string">&quot;false&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">title</span><span class="token operator">=</span><span class="token string">&quot;Potatoes&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">unit</span><span class="token operator">=</span><span class="token string">&quot;kg&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">volume</span><span class="token operator">=</span><span class="token string">&quot;1&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">volume_unit</span><span class="token operator">=</span><span class="token string">&quot;kg&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">price</span><span class="token operator">=</span><span class="token string">&quot;1500&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">price_unit</span><span class="token operator">=</span><span class="token string">&quot;kg&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">vat</span><span class="token operator">=</span><span class="token string">&quot;7&quot;</span> <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">lead_time</span><span class="token operator">=</span><span class="token string">&quot;2&quot;</span>
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">Available body parameters</p> <ul><li>visibillity <code>Boolean</code></li> <li>title <code>String(255)</code></li> <li>unit <code>String(2)</code></li> <li>volume <code>Integer, Unsigned</code></li> <li>volume_unit <code>String(2)</code></li> <li>price <code>Integer, Unsigned</code></li> <li>price_unit <code>String(2)</code></li> <li>price <code>TinyInteger, Unsigned</code></li> <li>lead_time <code>TinyInteger, Unsigned</code></li></ul></div> <p><strong>RESPONSE</strong> <code>StatusCode</code> 201</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">201</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;message&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Entity created.&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="update-an-individual-product"><a href="#update-an-individual-product" aria-hidden="true" class="header-anchor">#</a> Update an individual product</h3> <p><strong>REQUEST</strong> <strong><code>PATCH</code></strong> <code>/products/84683</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/products/84683 <span class="token punctuation">\</span>
+    -d <span class="token assign-left variable">visibillity</span><span class="token operator">=</span><span class="token string">&quot;true&quot;</span> 
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">Available body parameters</p> <ul><li>visibillity <code>Boolean</code></li> <li>title <code>String(255)</code></li> <li>unit <code>String(2)</code></li> <li>volume <code>Integer, Unsigned</code></li> <li>volume_unit <code>String(2)</code></li> <li>price <code>Integer, Unsigned</code></li> <li>price_unit <code>String(2)</code></li> <li>price <code>TinyInteger, Unsigned</code></li> <li>lead_time <code>TinyInteger, Unsigned</code></li></ul></div> <p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">84683</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;producer_id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;visibillity&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Potatoes&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;volume&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;lead_time&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="orders"><a href="#orders" aria-hidden="true" class="header-anchor">#</a> Orders</h2> <p>The API allows you to fetch orders. You can retrieve individual orders as well as a collection of orders.</p> <h3 id="get-a-collection-of-orders"><a href="#get-a-collection-of-orders" aria-hidden="true" class="header-anchor">#</a> Get a collection of orders</h3> <p><strong>REQUEST</strong> <code>GET</code> / orders</p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/orders?offset<span class="token operator">=</span><span class="token number">1564313229</span> <span class="token punctuation">\</span>
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">Available query parameters</p> <ul><li>customer_id <code>Integer</code></li> <li>offset <code>Unix Timestamp</code></li></ul></div> <p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">98732</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;producer_id&quot;</span><span class="token operator">:</span> <span class="token number">5678</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;customer_id&quot;</span><span class="token operator">:</span> <span class="token number">1234</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;subtotal&quot;</span><span class="token operator">:</span> <span class="token number">4000</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;total&quot;</span><span class="token operator">:</span> <span class="token number">4280</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;factor&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">280</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;quantity&quot;</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;product&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">84683</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;producer_id&quot;</span><span class="token operator">:</span> <span class="token number">5678</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Potatoes&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;volume&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+                <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:22:54&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="retrieve-an-individual-order"><a href="#retrieve-an-individual-order" aria-hidden="true" class="header-anchor">#</a> Retrieve an individual order</h3> <p><strong>REQUEST</strong> <strong><code>GET</code></strong> <code>/orders/{id}</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/orders/98732
+</code></pre></div><p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">98732</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;producer_id&quot;</span><span class="token operator">:</span> <span class="token number">5678</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;customer_id&quot;</span><span class="token operator">:</span> <span class="token number">1234</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;subtotal&quot;</span><span class="token operator">:</span> <span class="token number">4000</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;total&quot;</span><span class="token operator">:</span> <span class="token number">4280</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;factor&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">280</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;quantity&quot;</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;product&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">84683</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;producer_id&quot;</span><span class="token operator">:</span> <span class="token number">5678</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Potatoes&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;volume&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:22:54&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="deliveries"><a href="#deliveries" aria-hidden="true" class="header-anchor">#</a> Deliveries</h2> <p>The API allows you to fetch deliveries. A Delivery is a collection of orders. You can retrieve an individual delivery as well as a collection of deliveries.</p> <h3 id="get-a-collection-of-deliveries"><a href="#get-a-collection-of-deliveries" aria-hidden="true" class="header-anchor">#</a> Get a collection of deliveries</h3> <p><strong>REQUEST</strong> <strong><code>GET</code></strong> <code>/deliveries</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/deliveries?offset<span class="token operator">=</span><span class="token number">1564313229</span> <span class="token punctuation">\</span>
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">Available query parameters</p> <ul><li>customer_id <code>Integer</code></li> <li>supplier_id <code>Integer</code></li> <li>offset <code>Unix Timestamp</code></li></ul></div> <p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">98732</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;customer_id&quot;</span><span class="token operator">:</span> <span class="token number">5678</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;supplier_id&quot;</span><span class="token operator">:</span> <span class="token number">1234</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;shipping&quot;</span><span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;subtotal&quot;</span><span class="token operator">:</span> <span class="token number">4000</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;total&quot;</span><span class="token operator">:</span> <span class="token number">6660</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;factor&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">280</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;factor&quot;</span><span class="token operator">:</span> <span class="token number">19</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">380</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;quantity&quot;</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;product&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">84683</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;producer_id&quot;</span><span class="token operator">:</span> <span class="token number">5678</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Potatoes&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;volume&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+                <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;delivery_address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;recipient&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gretas Hof GmbH&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;street&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Am alten Pfad&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;house&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;post_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10997&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Berlin-Kreuzberg&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deutschland&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:22:54&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;delivery_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-23 12:00:00&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="retrieve-an-individual-delivery"><a href="#retrieve-an-individual-delivery" aria-hidden="true" class="header-anchor">#</a> Retrieve an individual delivery</h3> <p><strong>REQUEST</strong> <strong><code>GET</code></strong> <code>/deliveries/{id}</code></p> <div class="language-BASH extra-class"><pre class="language-bash"><code><span class="token function">curl</span> https://plattformneun.com/api/v1/deliveries/98732
+</code></pre></div><p><strong>RESPONSE</strong> <code>StatusCode</code> 200</p> <div class="language-JSON extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">98732</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;customer_id&quot;</span><span class="token operator">:</span> <span class="token number">5678</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;supplier_id&quot;</span><span class="token operator">:</span> <span class="token number">1234</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;shipping&quot;</span><span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;subtotal&quot;</span><span class="token operator">:</span> <span class="token number">4000</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;total&quot;</span><span class="token operator">:</span> <span class="token number">6660</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;factor&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">280</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;factor&quot;</span><span class="token operator">:</span> <span class="token number">19</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">380</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;quantity&quot;</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;product&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">84683</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;producer_id&quot;</span><span class="token operator">:</span> <span class="token number">5678</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Potatoes&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;volume&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;unit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kg&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;delivery_address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;recipient&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gretas Hof GmbH&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;street&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Am alten Pfad&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;house&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;post_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10997&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Berlin-Kreuzberg&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deutschland&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:22:54&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-19 10:20:54&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;delivery_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-23 12:00:00&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.cac3eb37.js" defer></script><script src="/assets/js/2.44c2a658.js" defer></script><script src="/assets/js/6.4dbc7ba9.js" defer></script>
+  </body>
+</html>

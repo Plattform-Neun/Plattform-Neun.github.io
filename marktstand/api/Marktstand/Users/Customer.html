@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Marktstand\Users\Customer | API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Marktstand_Users_Customer" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../Marktstand.html">Marktstand</a></li><li class="backslash">\</li><li><a href="../../Marktstand/Users.html">Users</a></li><li class="backslash">\</li><li>Customer</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Customer
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Customer</strong>        extends <abbr title="Illuminate\Foundation\Auth\User">User</abbr>
+</p>
+
+        
+    
+
+    
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../Marktstand/Payment/HasBankAccounts.html"><abbr title="Marktstand\Payment\HasBankAccounts">HasBankAccounts</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../Marktstand/Company/HasCompany.html"><abbr title="Marktstand\Company\HasCompany">HasCompany</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../Marktstand/Company/HasContacts.html"><abbr title="Marktstand\Company\HasContacts">HasContacts</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../Marktstand/Access/Verifiable.html"><abbr title="Marktstand\Access\Verifiable">Verifiable</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            </div>
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_casts">
+                                        protected                                        array
+                </td>
+                <td>$casts</td>
+                <td class="last">The attributes that should be cast to native types.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_appends">
+                                        protected                                        array
+                </td>
+                <td>$appends</td>
+                <td class="last">The accessors to append to the model's array form.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_hidden">
+                                        protected                                        array
+                </td>
+                <td>$hidden</td>
+                <td class="last">The attributes that should be hidden for arrays.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_bankAccounts">bankAccounts</a>()
+        
+                                            <p>Get the users bank accounts.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Marktstand/Payment/HasBankAccounts.html#method_bankAccounts"><abbr title="Marktstand\Payment\HasBankAccounts">HasBankAccounts</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_company">company</a>()
+        
+                                            <p>Get the company.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Marktstand/Company/HasCompany.html#method_company"><abbr title="Marktstand\Company\HasCompany">HasCompany</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCompanyNameAttribute">getCompanyNameAttribute</a>()
+        
+                                            <p>Get the company name.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Marktstand/Company/HasCompany.html#method_getCompanyNameAttribute"><abbr title="Marktstand\Company\HasCompany">HasCompany</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_contacts">contacts</a>()
+        
+                                            <p>Get the contacts.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Marktstand/Company/HasContacts.html#method_contacts"><abbr title="Marktstand\Company\HasContacts">HasContacts</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_verify">verify</a>()
+        
+                                            <p>Verify the user.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Marktstand/Access/Verifiable.html#method_verify"><abbr title="Marktstand\Access\Verifiable">Verifiable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_requestVerification">requestVerification</a>()
+        
+                                            <p>Request to be verified.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Marktstand/Access/Verifiable.html#method_requestVerification"><abbr title="Marktstand\Access\Verifiable">Verifiable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isVerified">isVerified</a>()
+        
+                                            <p>Check if the user has been verified.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Marktstand/Access/Verifiable.html#method_isVerified"><abbr title="Marktstand\Access\Verifiable">Verifiable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Illuminate\Database\Eloquent\Builder">Builder</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_scopeVerified">scopeVerified</a>(<abbr title="Illuminate\Database\Eloquent\Builder">Builder</abbr> $query)
+        
+                                            <p>Scope a query to only include verified users.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../Marktstand/Access/Verifiable.html#method_scopeVerified"><abbr title="Marktstand\Access\Verifiable">Verifiable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_boot">boot</a>()
+        
+                                            <p>The "booting" method of the model.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTypeAttribute">getTypeAttribute</a>()
+        
+                                            <p>Get the user type.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setPasswordAttribute">setPasswordAttribute</a>(string $value)
+        
+                                            <p>Set the users password.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addresses">addresses</a>()
+        
+                                            <p>Get the customers addresses.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_cart">cart</a>()
+        
+                                            <p>The customers cart.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Marktstand\Users\Marktstand\Users\State">State</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_state">state</a>()
+        
+                                            <p>Get the users state.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_favourites">favourites</a>()
+        
+                                            <p>Get the customers favourite products.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_bankAccounts">
+        <div class="location">in <a href="../../Marktstand/Payment/HasBankAccounts.html#method_bankAccounts"><abbr title="Marktstand\Payment\HasBankAccounts">HasBankAccounts</abbr></a> at         line 10</div>
+        <code>                    
+    <strong>bankAccounts</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the users bank accounts.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_company">
+        <div class="location">in <a href="../../Marktstand/Company/HasCompany.html#method_company"><abbr title="Marktstand\Company\HasCompany">HasCompany</abbr></a> at         line 10</div>
+        <code>                    
+    <strong>company</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the company.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCompanyNameAttribute">
+        <div class="location">in <a href="../../Marktstand/Company/HasCompany.html#method_getCompanyNameAttribute"><abbr title="Marktstand\Company\HasCompany">HasCompany</abbr></a> at         line 20</div>
+        <code>                    string
+    <strong>getCompanyNameAttribute</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the company name.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_contacts">
+        <div class="location">in <a href="../../Marktstand/Company/HasContacts.html#method_contacts"><abbr title="Marktstand\Company\HasContacts">HasContacts</abbr></a> at         line 10</div>
+        <code>                    
+    <strong>contacts</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the contacts.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_verify">
+        <div class="location">in <a href="../../Marktstand/Access/Verifiable.html#method_verify"><abbr title="Marktstand\Access\Verifiable">Verifiable</abbr></a> at         line 17</div>
+        <code>                    void
+    <strong>verify</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Verify the user.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_requestVerification">
+        <div class="location">in <a href="../../Marktstand/Access/Verifiable.html#method_requestVerification"><abbr title="Marktstand\Access\Verifiable">Verifiable</abbr></a> at         line 30</div>
+        <code>                    void
+    <strong>requestVerification</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Request to be verified.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isVerified">
+        <div class="location">in <a href="../../Marktstand/Access/Verifiable.html#method_isVerified"><abbr title="Marktstand\Access\Verifiable">Verifiable</abbr></a> at         line 40</div>
+        <code>                    bool
+    <strong>isVerified</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Check if the user has been verified.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_scopeVerified">
+        <div class="location">in <a href="../../Marktstand/Access/Verifiable.html#method_scopeVerified"><abbr title="Marktstand\Access\Verifiable">Verifiable</abbr></a> at         line 51</div>
+        <code>                    <abbr title="Illuminate\Database\Eloquent\Builder">Builder</abbr>
+    <strong>scopeVerified</strong>(<abbr title="Illuminate\Database\Eloquent\Builder">Builder</abbr> $query)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Scope a query to only include verified users.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Illuminate\Database\Eloquent\Builder">Builder</abbr></td>
+                <td>$query</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Illuminate\Database\Eloquent\Builder">Builder</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_boot">
+        <div class="location">at         line 56</div>
+        <code>        static    protected        void
+    <strong>boot</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The "booting" method of the model.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTypeAttribute">
+        <div class="location">at         line 74</div>
+        <code>                    string
+    <strong>getTypeAttribute</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the user type.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setPasswordAttribute">
+        <div class="location">at         line 84</div>
+        <code>                    
+    <strong>setPasswordAttribute</strong>(string $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the users password.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addresses">
+        <div class="location">at         line 92</div>
+        <code>                    
+    <strong>addresses</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the customers addresses.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_cart">
+        <div class="location">at         line 100</div>
+        <code>                    
+    <strong>cart</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The customers cart.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_state">
+        <div class="location">at         line 110</div>
+        <code>                    <abbr title="Marktstand\Users\Marktstand\Users\State">State</abbr>
+    <strong>state</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the users state.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Marktstand\Users\Marktstand\Users\State">State</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_favourites">
+        <div class="location">at         line 118</div>
+        <code>                    
+    <strong>favourites</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the customers favourite products.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
